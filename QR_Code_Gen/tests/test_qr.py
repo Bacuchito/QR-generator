@@ -1,11 +1,12 @@
+from QR_Code_Gen.Qr_generator import crear_qr
 import os
 import unittest
-from urllib.parse import urlparse
-from Qr_generator import crear_qr
+
 
 class TestQRGenerator(unittest.TestCase):
     
     def test_crear_qr(self):
+        """Create a qr code and verify"""
         urls = ["https://www.google.com", "https://www.facebook.com", "https://www.twitter.com"]
         crear_qr(urls)
         self.assertTrue(os.path.exists("qr_image/www.google.com.png"))
